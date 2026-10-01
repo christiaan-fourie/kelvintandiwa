@@ -20,7 +20,7 @@ export default function Home() {
         <div className="cta-row"><a className="btn btn-red" href="#get-the-book">Get The Book</a><Link className="btn btn-ghost" href="/book-launch">See The Launch</Link></div>
       </Hero>
       <section><div className="wrap book-feature reveal">
-        <div className="book-photo lg"><Image src={images.book} alt="This Is Our Country book cover" width={1124} height={1028} sizes="320px" /></div>
+        <div className="book-photo lg"><Image src={images.book} alt="This Is Our Country book cover" width={1500} height={1499} sizes="320px" /></div>
         <div><span className="eyebrow">THE BOOK</span><h2 className="feature-title">A debut that asks what we owe the past, and each other.</h2><p className="measure">Through reflections on history, identity, leadership, and resilience, <em>This Is Our Country</em> invites every Zimbabwean to embrace their shared heritage and help build a hopeful tomorrow.</p><BuyButtons /></div>
       </div></section>
       <section className="section-alt"><div className="wrap"><SectionHeading eyebrow="PRESS">In the news.</SectionHeading><div className="press-card reveal"><span className="press-label">IN THE NEWS</span><p>Kelvin was featured in <strong>The Herald</strong>: &quot;National pride at the heart of young author&apos;s new book.&quot;</p><a className="readmore" href={heraldUrl} target="_blank" rel="noopener noreferrer">Read The Feature</a></div></div></section>

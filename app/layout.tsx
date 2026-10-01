@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Kelvin Tadiwanashe",
-    images: ["https://digitalxone.co.za/assets/book/BOOK.png"],
+    images: ["/book-cover.webp"],
   },
   twitter: { card: "summary_large_image" },
 };

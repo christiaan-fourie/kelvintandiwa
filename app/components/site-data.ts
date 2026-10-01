@@ -1,9 +1,6 @@
-export const siteImage = (path: string) =>
-  `https://digitalxone.co.za/assets/${path}`;
-
 export const images = {
   favicon: "/logo.webp",
-  book: siteImage("book/BOOK.png"),
+  book: "/book-cover.webp",
   jacketOff: "/kelvin/jacket-off.jpg",
   portrait: "/kelvin/portrait.jpg",
   seated: "/kelvin/seated.jpg",
