@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return <>
     <main>
-      <Hero image={images.jacketOff} imageAlt="Kelvin Tadiwanashe, The Royal Doctor" imagePosition="78% 15%" badge="OUT NOW · LAUNCHED AUGUST 27, 2026" title={<>This Is Our Country<span className="title-sub">Between Memory and Tomorrow</span></>}>
+      <Hero image={images.jacketOff} imageAlt="Kelvin Tadiwanashe, The Royal Doctor" imagePosition="78% 15%" mobileImagePosition="32% 12%" badge="OUT NOW · LAUNCHED AUGUST 27, 2026" title={<>This Is Our Country<span className="title-sub">Between Memory and Tomorrow</span></>}>
         <p className="lede">Kelvin Tadiwanashe, The Royal Doctor, invites you into a conversation about Zimbabwe&apos;s past, present, and future. His debut book is officially launched and available now.</p>
         <div className="cta-row"><a className="btn btn-red" href="#get-the-book">Get The Book</a><Link className="btn btn-ghost" href="/book-launch">See The Launch</Link></div>
       </Hero>

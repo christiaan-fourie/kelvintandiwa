@@ -9,6 +9,7 @@ export function Gallery({ items = galleryImages, variant = "portrait" }: { items
   const closeButton = useRef<HTMLButtonElement>(null);
   const dialog = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLElement | null>(null);
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
   const open = current !== null;
 
   const close = useCallback(() => {
@@ -16,6 +17,17 @@ export function Gallery({ items = galleryImages, variant = "portrait" }: { items
     window.setTimeout(() => trigger.current?.focus(), 0);
   }, []);
   const step = useCallback((direction: number) => setCurrent((index) => index === null ? null : (index + direction + items.length) % items.length), [items.length]);
+  const startSwipe = (event: React.PointerEvent) => {
+    if (event.pointerType === "touch") swipeStart.current = { x: event.clientX, y: event.clientY };
+  };
+  const finishSwipe = (event: React.PointerEvent) => {
+    const start = swipeStart.current;
+    swipeStart.current = null;
+    if (!start || event.pointerType !== "touch") return;
+    const x = event.clientX - start.x;
+    const y = event.clientY - start.y;
+    if (Math.abs(x) >= 50 && Math.abs(x) > Math.abs(y)) step(x < 0 ? 1 : -1);
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -48,10 +60,10 @@ export function Gallery({ items = galleryImages, variant = "portrait" }: { items
         ))}
       </div>
       {current !== null && (
-        <div className="lightbox open" role="dialog" aria-modal="true" aria-label="Photo viewer" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
+        <div className="lightbox open" role="dialog" aria-modal="true" aria-label="Photo viewer" onPointerDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <div className="lightbox-inner" ref={dialog}>
             <button ref={closeButton} className="lightbox-close-btn" type="button" aria-label="Close" onClick={close}>✕</button>
-            <div className="lb-frame">
+            <div className="lb-frame" onPointerDown={startSwipe} onPointerUp={finishSwipe} onPointerCancel={() => { swipeStart.current = null; }}>
               <Image src={items[current].src} alt={items[current].alt} width={1200} height={900} sizes="(max-width: 700px) 100vw, 640px" />
               <div className="lb-nav">
                 <button className="lb-prev" type="button" aria-label="Previous" onClick={() => step(-1)}>‹</button>
