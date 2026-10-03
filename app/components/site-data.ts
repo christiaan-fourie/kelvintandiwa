@@ -13,6 +13,8 @@ export const publisherUrl =
   "https://www.bespokenpublishing.co/the-royal-doctor#pre-order-now";
 export const heraldUrl =
   "https://www.heraldonline.co.zw/national-pride-at-the-heart-of-young-authors-new-book/";
+export const linkedinUrl = "https://www.linkedin.com/in/kelvin-t-zivhu250570360";
+export const instagramUrl = "https://www.instagram.com/docteur.__.royal";
 
 export const galleryImages = [
   { src: images.moving, alt: "On The Move, Kelvin Tadiwanashe", title: "On The Move", description: "Campus life at the University of Nottingham Malaysia." },

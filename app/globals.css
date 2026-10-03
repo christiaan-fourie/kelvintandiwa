@@ -39,6 +39,7 @@ button, input, textarea { font: inherit; }
 .navlinks a { display: block; padding: 0.3rem 0; border-bottom: 2px solid transparent; color: var(--off-white); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-decoration: none; transition: color 150ms, border-color 150ms; }
 .navlinks a:hover, .navlinks a:focus-visible { color: var(--gold); }
 .navlinks a.current { border-color: var(--red); color: var(--red-light); }
+.navlinks a[href="/book-launch"], .navlinks a[href="/book-launch"]:hover, .navlinks a[href="/book-launch"]:focus-visible { color: var(--red); }
 .navtoggle { display: none; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--grey-line-dark); border-radius: var(--radius); background: transparent; color: var(--off-white); cursor: pointer; font-size: 1.1rem; }
 
 .banner { position: relative; display: flex; min-height: 100vh; min-height: 100svh; align-items: flex-end; overflow: hidden; color: #fff; }
@@ -79,6 +80,7 @@ main > section:not(.banner), article.section { padding: clamp(3.75rem, 7vw, 5.5r
 .book-photo:hover { transform: translateY(-4px); }
 
 .press-card { display: flex; flex-wrap: wrap; align-items: center; gap: 1.6rem; padding: 1.6rem 1.8rem; border-left: 4px solid var(--green); border-radius: var(--radius); background: var(--paper-2); }
+.press-list { display: grid; gap: 1rem; }
 .press-card p { min-width: 200px; flex: 1; font-size: 0.95rem; }
 .press-label { flex-shrink: 0; padding: 0.4rem 0.8rem; border-radius: var(--radius); background: var(--bg-dark); color: var(--gold); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; }
 .readmore { display: inline-block; border-bottom: 2px solid var(--red); font-size: 0.82rem; font-weight: 700; text-decoration: none; }
@@ -158,6 +160,8 @@ main > section:not(.banner), article.section { padding: clamp(3.75rem, 7vw, 5.5r
 .post h2 { margin: 0.5rem 0 0.6rem; font-size: 1.05rem; font-style: italic; }
 .post p { font-size: 0.88rem; opacity: 0.75; }
 .post .readmore { margin-top: 0.7rem; }
+.news-clipping { display: block; width: 100%; height: 190px; overflow: hidden; margin-top: 1rem; border: 1px solid var(--grey-line); border-radius: var(--radius); background: #fff; }
+.news-clipping img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .pagehero-simple { padding: 4rem 0 2.5rem; border-bottom: 1px solid var(--grey-line); background: var(--paper-2); }
 .pagehero-simple { padding-top: calc(4rem + var(--header-height)); }
 .article-wrap { max-width: 760px; }
@@ -166,6 +170,7 @@ main > section:not(.banner), article.section { padding: clamp(3.75rem, 7vw, 5.5r
 .article-byline { margin-top: 1.2rem; color: var(--red); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; }
 .post-body { max-width: 720px; }
 .post-body p { margin-bottom: 1.3rem; font-size: 1rem; line-height: 1.85; }
+.post-body h2 { margin: 2.4rem 0 1rem; font-size: 1.45rem; }
 
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.4rem; }
 form { display: grid; gap: 1.1rem; }
